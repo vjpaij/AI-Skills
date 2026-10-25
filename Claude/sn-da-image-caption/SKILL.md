@@ -24,7 +24,7 @@ The script converts images to text descriptions via a vision model. Configure vi
 python3 scripts/caption.py /mnt/data/image.png
 
 # Custom prompt — guide what to extract
-python3 scripts/caption.py /mnt/data/chart.png --prompt "提取所有数值，Markdown 表格格式"
+python3 scripts/caption.py /mnt/data/chart.png --prompt "Extract all values in Markdown table format"
 
 # JSON output — includes detected type, usage stats, cache info
 python3 scripts/caption.py /mnt/data/image.png --json
@@ -98,15 +98,15 @@ Different image types need different prompts. The script auto-detects, but speci
 
 | Image Type | When | Recommended --prompt |
 |-----------|------|---------------------|
-| Data chart | Bar chart / Line chart / Pie chart | `"提取图表标题、坐标轴、每个数据点数值、图例。Markdown 表格输出。"` |
-| Table screenshot | Table screenshot | `"提取表格所有内容，Markdown 表格格式，保持行列结构，数值不四舍五入。"` |
-| UI screenshot | UI screenshot | `"以前端开发者视角描述：布局、组件、文字、颜色。"` |
-| Diagram | Flowchart / Architecture diagram | `"描述所有节点、连接关系（A→B）、分支条件。"` |
+| Data chart | Bar chart / Line chart / Pie chart | `"Extract chart title, axes, data points, and legend. Output as Markdown table."` |
+| Table screenshot | Table screenshot | `"Extract complete table contents as Markdown table, preserving rows and columns without rounding."` |
+| UI screenshot | UI screenshot | `"Describe from frontend developer perspective: layout, components, copy, colors."` |
+| Diagram | Flowchart / Architecture diagram | `"Describe all nodes, connections (A -> B), and branch conditions."` |
 | General | Photos, other imagery | Omit --prompt to use default |
 
 ## Parsing Caption Results
 
-Caption 通常返回 Markdown 表格，Parse into DataFrame：
+Caption usually returns a Markdown table; parse into DataFrame:
 
 ```python
 import pandas as pd
@@ -211,7 +211,7 @@ all_dfs = []
 
 for img in image_files:
     r = subprocess.run(
-        ["python3", CAPTION, img, "--json", "--prompt", "Extracted Data，Markdown 表格"],
+        ["python3", CAPTION, img, "--json", "--prompt", "Extracted Data as Markdown table"],
         capture_output=True, text=True, timeout=60
     )
     desc = json.loads(r.stdout)["description"]
@@ -233,6 +233,6 @@ python3 scripts/caption.py /mnt/data/images/ --batch --output /mnt/data/captions
 - **Always caption first** — don't guess image content from filenames
 - **Use --prompt for precision** — auto-detect is OK, explicit prompt is better
 - **Verify extracted data** — check sums, percentages, row counts after parsing
-- **Large tables truncate** — caption in two passes: `"提取前半部分"` + `"提取后半部分"`
+- **Large tables truncate** — caption in two passes: "Extract first half" + "Extract second half"
 - **Chinese font** — must set before any matplotlib call, or output is garbled
 - **Timeout** — single image ~10-30s, batch set timeout accordingly

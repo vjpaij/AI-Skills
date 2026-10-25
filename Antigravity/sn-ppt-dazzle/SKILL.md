@@ -8,9 +8,9 @@ metadata:
   user_visible: false
 triggers:
   - "sn-ppt-dazzle"
-  - "动态 HTML"
-  - "动态演示"
-  - "炫彩 deck"
+  - "animated html"
+  - "interactive deck"
+  - "dazzle presentation"
   - "dazzle"
 ---
 

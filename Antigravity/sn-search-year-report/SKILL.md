@@ -22,5 +22,5 @@ Always preserve company name, security ticker, reporting period, disclosure date
 3. **Official Exchange Repositories**:
    - US: SEC EDGAR (`10-K`, `10-Q`, `20-F`)
    - HK: HKEXnews (`Annual Report`, `Interim Report`)
-   - China: Cninfo (巨潮资讯) official disclosure portal
+   - China: Cninfo official disclosure portal
    - UK: Companies House service

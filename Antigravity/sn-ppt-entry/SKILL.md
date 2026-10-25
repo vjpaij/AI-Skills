@@ -7,10 +7,10 @@ metadata:
   category: scene
   user_visible: true
 triggers:
-  - "生成 PPT"
-  - "做一套 PPT"
-  - "做一份演示"
-  - "继续生成 PPT"
+  - "generate ppt"
+  - "create slide deck"
+  - "make presentation"
+  - "continue ppt"
   - "sn-ppt-entry"
 ---
 

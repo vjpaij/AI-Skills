@@ -70,53 +70,65 @@ DEFAULT_MODEL = (
 
 PROMPTS = {
     "chart": (
-        "这是一张数据图表。请精确提取以下信息：\n"
-        "1. 图表标题\n"
-        "2. X轴标签（所有类别/时间点）及单位\n"
-        "3. Y轴标签及单位\n"
-        "4. 每个数据点/柱/扇区的具体数值（保留原始精度）\n"
-        "5. 图例名称（如有多系列）\n"
-        "6. 整体趋势或关键发现\n"
-        "请以 Markdown 表格格式输出数值数据。"
+        "This is a data chart. Please precisely extract the following information:\n"
+        "1. Chart title\n"
+        "2. X-axis labels (all categories / time points) and units\n"
+        "3. Y-axis labels and units\n"
+        "4. Exact numerical values for every data point, bar, or sector (preserve original precision)\n"
+        "5. Legend names (if multi-series)\n"
+        "6. Overall trend or key insights\n"
+        "Please output all numeric data formatted as a Markdown table."
     ),
     "table": (
-        "请精确提取图片中表格的所有内容。要求：\n"
-        "1. 输出为 Markdown 表格格式\n"
-        "2. 保持原始行列结构不变\n"
-        "3. 数值保持原样，不四舍五入、不省略\n"
-        "4. 如有合并单元格，展开并在每行重复填充\n"
-        "5. 表头如有多级，用 / 分隔"
+        "Please precisely extract all contents of the table in this image:\n"
+        "1. Output in Markdown table format\n"
+        "2. Preserve original row and column structures\n"
+        "3. Keep exact values without rounding or truncation\n"
+        "4. Expand merged cells and repeat values across each corresponding row\n"
+        "5. Separate multi-level column headers using '/'"
     ),
     "ui": (
-        "请以前端开发者视角详细描述这个界面截图：\n"
-        "1. 页面整体布局（header/sidebar/content/footer）\n"
-        "2. 每个UI组件（按钮/表单/表格/导航/卡片）的位置和内容\n"
-        "3. 文字内容（完整提取）\n"
-        "4. 颜色主题和字体样式\n"
-        "5. 间距和对齐关系"
+        "Please provide a comprehensive UI/UX breakdown of this interface from a frontend developer perspective:\n"
+        "1. Overall page layout (header / sidebar / content / footer)\n"
+        "2. Exact position, hierarchy, and contents of each UI component (buttons, forms, tables, cards, navigation)\n"
+        "3. Complete text extraction of all visible copy\n"
+        "4. Color theme, palette, and typography styling\n"
+        "5. Spacing, alignment, and grid structure"
     ),
     "diagram": (
-        "请描述这张图的完整结构：\n"
-        "1. 图的类型（流程图/架构图/思维导图/ER图/其他）\n"
-        "2. 所有节点的名称和内容\n"
-        "3. 节点之间的连接关系（A → B）和方向\n"
-        "4. 分支条件（如有）\n"
-        "5. 层级或分组关系\n"
-        "6. 整体含义描述"
+        "Please describe the complete structure of this diagram:\n"
+        "1. Diagram type (flowchart, architecture diagram, mindmap, ER diagram, sequence diagram, etc.)\n"
+        "2. Names, labels, and text contents of all nodes\n"
+        "3. Connections and directional relationships between nodes (A -> B)\n"
+        "4. Branching conditions and decision pathways\n"
+        "5. Grouping hierarchies or modular boundaries\n"
+        "6. High-level architectural narrative and system flow"
     ),
-    "general": "请详细描述这张图片的内容，包括：主体对象、背景、文字信息、颜色和布局。如果包含文字请完整提取。",
+    "general": (
+        "Please describe the content of this image in comprehensive detail, including: "
+        "main subjects, visual context, background, text elements, color palette, and composition. "
+        "Extract any visible text completely."
+    ),
 }
 
 # ─── Type detection keywords ────────────────────────────────────────
 
 TYPE_KEYWORDS = {
-    "chart": ["chart", "图表", "趋势", "柱状", "折线", "饼图", "散点", "bar", "line", "pie",
-              "histogram", "可视化", "visualization", "plot", "graph"],
-    "table": ["table", "表格", "excel", "整理", "提取", "data", "列表", "sheet"],
-    "ui": ["ui", "截图", "screenshot", "界面", "页面", "网页", "app", "vue", "react",
-           "html", "css", "前端", "layout", "设计稿"],
-    "diagram": ["流程", "架构", "diagram", "flow", "架构图", "思维导图", "mindmap",
-                "topology", "拓扑", "关系图", "er图"],
+    "chart": [
+        "chart", "trend", "bar", "line", "pie", "histogram", "visualization",
+        "plot", "graph", "scatter", "timeseries", "axis"
+    ],
+    "table": [
+        "table", "grid", "excel", "spreadsheet", "data", "sheet", "matrix", "column", "row"
+    ],
+    "ui": [
+        "ui", "screenshot", "interface", "page", "web", "app", "vue", "react",
+        "html", "css", "frontend", "layout", "mockup", "design", "component"
+    ],
+    "diagram": [
+        "diagram", "flow", "architecture", "flowchart", "mindmap", "topology",
+        "er", "entity", "uml", "network", "system", "pipeline"
+    ],
 }
 
 
