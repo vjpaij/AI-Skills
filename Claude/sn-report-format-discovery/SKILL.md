@@ -1,6 +1,6 @@
 ---
 name: sn-report-format-discovery
-description: Used when the user wants a recommendation for the final research deliverable format, or when the final format cannot be directly inferred from requirements. Resolves the requirement into a concise format string without creating schema or proposal files.
+description: "Used when the user wants a recommendation for the final research deliverable format, or when the final format cannot be directly inferred from requirements. Resolves the requirement into a concise format string without creating schema or proposal files."
 ---
 
 # Final Deliverable Format Recommendation

@@ -1,6 +1,6 @@
 ---
 name: antigravity-skills-manager
-description: Searches, installs, updates, and lists skills from the Antigravity Skill Vault. Use when choosing or managing workspace or global skills through the npm CLI.
+description: "Searches, installs, updates, and lists skills from the Antigravity Skill Vault. Use when choosing or managing workspace or global skills through the npm CLI."
 ---
 
 # Antigravity Skills Manager

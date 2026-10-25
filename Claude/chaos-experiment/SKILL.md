@@ -1,6 +1,6 @@
 ---
 name: chaos-experiment
-description: Interactive wizard to design and validate a chaos engineering experiment
+description: "Interactive wizard to design and validate a chaos engineering experiment"
 ---
 
 # /chaos-experiment

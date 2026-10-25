@@ -1,6 +1,6 @@
 ---
 name: sn-ppt-entry
-description: Use when a user asks to create a presentation, slide deck, PPT, or PPTX from a query and optional files, or to resume an existing SenseNova presentation task.
+description: "Use when a user asks to create a presentation, slide deck, PPT, or PPTX from a query and optional files, or to resume an existing SenseNova presentation task."
 metadata:
   project: SenseNova-Skills
   tier: 1

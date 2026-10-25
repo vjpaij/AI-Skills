@@ -1,6 +1,6 @@
 ---
 name: sn-prepare-citations
-description: Used when the final draft is complete and footnotes require post-processing: deduplicates [^key] references, converts them to [N] numbered citations, inserts L0/TOC, and appends the bibliography.
+description: "Used when the final draft is complete and footnotes require post-processing: deduplicates [^key] references, converts them to [N] numbered citations, inserts L0/TOC, and appends the bibliography."
 ---
 
 # sn-prepare-citations (Citation Rendering)

@@ -1,6 +1,6 @@
 ---
 name: backend-integrations
-description: Build or review backend services, REST or GraphQL APIs, authentication, authorization, validation, persistence, background jobs, or third-party integrations.
+description: "Build or review backend services, REST or GraphQL APIs, authentication, authorization, validation, persistence, background jobs, or third-party integrations."
 ---
 
 # Backend and integrations

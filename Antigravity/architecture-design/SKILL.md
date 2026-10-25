@@ -1,6 +1,6 @@
 ---
 name: architecture-design
-description: Design or review a software system, major component, data model, API contract, migration, or performance plan. Use when a change crosses service or data boundaries or needs explicit trade-offs.
+description: "Design or review a software system, major component, data model, API contract, migration, or performance plan. Use when a change crosses service or data boundaries or needs explicit trade-offs."
 ---
 
 # Architecture and design

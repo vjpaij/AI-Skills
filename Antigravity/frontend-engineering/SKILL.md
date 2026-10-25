@@ -1,6 +1,6 @@
 ---
 name: frontend-engineering
-description: Implement or review production frontend interfaces, design systems, responsive layouts, accessibility, client-side state, data fetching, or user-facing error and empty states.
+description: "Implement or review production frontend interfaces, design systems, responsive layouts, accessibility, client-side state, data fetching, or user-facing error and empty states."
 ---
 
 # Frontend engineering

@@ -1,6 +1,6 @@
 ---
 name: sn-search-finance
-description: Used to search financial markets, securities, company fundamentals, prices, candlestick charts, regulatory filings, financial news, A-share data, HK stocks, or global tickers via yfinance, mootdx, API scripts, or browser-use.
+description: "Used to search financial markets, securities, company fundamentals, prices, candlestick charts, regulatory filings, financial news, A-share data, HK stocks, or global tickers via yfinance, mootdx, API scripts, or browser-use."
 ---
 
 # Financial & Market Search

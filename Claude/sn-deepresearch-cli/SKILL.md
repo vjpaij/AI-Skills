@@ -3,7 +3,6 @@ name: sn-deepresearch-cli
 description: "One-click CLI runner for SenseNova DeepResearch. Coordinates environment checks, harness preparation, search iterations, evidence verification, and chapter assembly for comprehensive whitepapers and industry reports."
 ---
 
-
 # sn-deepresearch-cli
 
 作为 SenseNova-Skills-DeepResearch 的用户入口，负责环境预检、安装引导、参数确认、任务启动、进度告知和结果交付。

@@ -1,6 +1,6 @@
 ---
 name: sn-team-harness
-description: Multi-agent team harness and collaborative workspace. Coordinates shared goals, task boards, automated deliverables, and human-in-the-loop approvals across specialized agents.
+description: "Multi-agent team harness and collaborative workspace. Coordinates shared goals, task boards, automated deliverables, and human-in-the-loop approvals across specialized agents."
 ---
 
 # SenseNova Collaborative Team Harness

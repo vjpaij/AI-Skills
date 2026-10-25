@@ -1,6 +1,6 @@
 ---
 name: sn-ppt-doctor
-description: Diagnostic and troubleshooting assistant for presentation deck generation pipelines, Playwright/Chromium rendering, HTML-to-PPTX exporters, and local Workbench servers.
+description: "Diagnostic and troubleshooting assistant for presentation deck generation pipelines, Playwright/Chromium rendering, HTML-to-PPTX exporters, and local Workbench servers."
 ---
 
 # Presentation Tool Diagnostics (sn-ppt-doctor)

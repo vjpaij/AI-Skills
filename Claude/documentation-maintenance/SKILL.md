@@ -1,6 +1,6 @@
 ---
 name: documentation-maintenance
-description: Create or maintain software README and setup guides, architecture or API docs, changelogs, troubleshooting, dependency upgrades, technical-debt records, incident response, or postmortems.
+description: "Create or maintain software README and setup guides, architecture or API docs, changelogs, troubleshooting, dependency upgrades, technical-debt records, incident response, or postmortems."
 ---
 
 # Documentation and maintenance

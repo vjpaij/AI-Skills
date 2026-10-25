@@ -1,6 +1,6 @@
 ---
 name: ai-agent-engineering
-description: Build or review LLM integrations, RAG and retrieval, tool calling, structured outputs, agent workflows, evaluations, tracing, guardrails, or cost and latency behavior.
+description: "Build or review LLM integrations, RAG and retrieval, tool calling, structured outputs, agent workflows, evaluations, tracing, guardrails, or cost and latency behavior."
 ---
 
 # AI and agent engineering

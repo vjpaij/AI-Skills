@@ -1,6 +1,6 @@
 ---
 name: claude-code-operations
-description: Configure Claude Code projects or global setup, including CLAUDE.md, scoped rules, Skills, custom subagents, hooks, plugins, MCP, permissions, sandbox settings, and CLI automation.
+description: "Configure Claude Code projects or global setup, including CLAUDE.md, scoped rules, Skills, custom subagents, hooks, plugins, MCP, permissions, sandbox settings, and CLI automation."
 ---
 
 # Claude Code operations

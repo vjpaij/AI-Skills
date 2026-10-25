@@ -1,6 +1,6 @@
 ---
 name: sn-search-social-en
-description: Used to search English social platforms, including Reddit discussions, Twitter/X posts, and YouTube videos.
+description: "Used to search English social platforms, including Reddit discussions, Twitter/X posts, and YouTube videos."
 ---
 
 # sn-search-social-en - English Social Media Search

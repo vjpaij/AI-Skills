@@ -3,7 +3,6 @@ name: sn-search-academic
 description: "Used for academic research, paper deep-reading, literature reviews, encyclopedic knowledge queries, and citation graph tracing."
 ---
 
-
 # sn-search-academic - Academic Search
 
 ## Credential Configuration

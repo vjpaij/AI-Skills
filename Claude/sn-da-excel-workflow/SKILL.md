@@ -3,7 +3,6 @@ name: sn-da-excel-workflow
 description: "Multi-step Excel data analysis orchestrator. Covers: (1) reading multi-sheet Excel files and counting rows, (2) large file detection (auto-Parquet optimization for >=10k rows), (3) data cleaning (missing values, text standardization, invalid characters), (4) conditional filtering and categorization, (5) cross-sheet statistical aggregation, and (6) exporting formatted Excel/CSV with download links. Handles the end-to-end pipeline from data ingestion to report generation via modular capability sub-skills."
 ---
 
-
 # Excel Data Analysis Workflow
 
 End-to-end workflow for structured Excel analysis. Each step maps to a

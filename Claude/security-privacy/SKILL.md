@@ -1,6 +1,6 @@
 ---
 name: security-privacy
-description: Threat-model an application change or review secure design, OWASP risks, secrets, dependencies and licenses, prompt injection, privacy, data retention, or access controls.
+description: "Threat-model an application change or review secure design, OWASP risks, secrets, dependencies and licenses, prompt injection, privacy, data retention, or access controls."
 ---
 
 # Security and privacy

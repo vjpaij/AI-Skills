@@ -1,6 +1,6 @@
 ---
 name: sn-ppt-tools
-description: Auxiliary image search, web retrieval, and icon discovery tools supporting the presentation generation suite when host environment tools are unavailable.
+description: "Auxiliary image search, web retrieval, and icon discovery tools supporting the presentation generation suite when host environment tools are unavailable."
 ---
 
 # Presentation Supporting Tools

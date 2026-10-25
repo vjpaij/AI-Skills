@@ -1,9 +1,6 @@
 ---
 name: sn-image-base
-description: |
-  Base-layer skill for the SenseNova-Skills project, providing low-level APIs for image generation, recognition (VLM), and text optimization (LLM).
-  This skill does not preprocess inputs; it only calls backend services and returns results.
-  This skill is not user-facing and is intended for upper-layer skills only.
+description: "| Base-layer skill for the SenseNova-Skills project, providing low-level APIs for image generation, recognition (VLM), and text optimization (LLM). This skill does not preprocess inputs; it only calls backend services and returns results. This skill is not user-facing and is intended for upper-layer skills only."
 triggers:
   - "SenseNova-Skills Image Generation"
   - "SenseNova-Skills Core Image Tool"

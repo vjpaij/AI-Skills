@@ -1,6 +1,6 @@
 ---
 name: sn-proactive-agent
-description: Installs, starts, and runs the Proactive Agent, recording project progress and proactively suggesting next actions at appropriate milestones.
+description: "Installs, starts, and runs the Proactive Agent, recording project progress and proactively suggesting next actions at appropriate milestones."
 ---
 
 # Proactive Agent

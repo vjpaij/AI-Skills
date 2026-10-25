@@ -1,6 +1,6 @@
 ---
 name: devops-reliability
-description: Plan or review CI/CD, Docker and environment configuration, production deployment, rollback, feature flags, observability, backups, disaster recovery, or restore procedures.
+description: "Plan or review CI/CD, Docker and environment configuration, production deployment, rollback, feature flags, observability, backups, disaster recovery, or restore procedures."
 ---
 
 # DevOps and reliability

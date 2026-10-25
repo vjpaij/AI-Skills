@@ -3,7 +3,6 @@ name: sn-ppt-standard
 description: "Used after `sn-ppt-entry` and `sn-ppt-story` have prepared absolute `DECK_DIR` and `outline.md`. Generates standalone HTML per slide (1600x900), renders PNGs, produces speaker notes, creates `present.html`, and exports native PPTX packages via the Standard exporter."
 ---
 
-
 # sn-ppt-standard
 
 把本文件当作**路线图**，不要当作需要一次背完的规范全集。只读取已准备任务的 Entry/Story 交接、该路径要求的 reference 和职责卡。

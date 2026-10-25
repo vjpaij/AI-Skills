@@ -1,6 +1,6 @@
 ---
 name: testing-quality
-description: Create or review a risk-based test plan, unit or integration tests, browser tests, regression reproduction, TDD workflow, code review, refactoring, or static analysis.
+description: "Create or review a risk-based test plan, unit or integration tests, browser tests, regression reproduction, TDD workflow, code review, refactoring, or static analysis."
 ---
 
 # Testing and quality

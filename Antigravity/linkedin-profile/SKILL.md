@@ -1,6 +1,6 @@
 ---
 name: linkedin-profile
-description: Use when someone wants their LinkedIn profile audited or rewritten — headline, About section, experience bullets, Featured, banner, recommendations — or says "fix my headline", "my profile gets views but nothing happens", "optimize my LinkedIn profile", "what should my About section say". Scores the headline on five dimensions, audits the whole profile 0-100 and ranks fixes by points per hour, and assembles an About section that survives the "…see more" fold.
+description: "Use when someone wants their LinkedIn profile audited or rewritten — headline, About section, experience bullets, Featured, banner, recommendations — or says \"fix my headline\", \"my profile gets views but nothing happens\", \"optimize my LinkedIn profile\", \"what should my About section say\". Scores the headline on five dimensions, audits the whole profile 0-100 and ranks fixes by points per hour, and assembles an About section that survives the \"…see more\" fold."
 license: MIT
 metadata:
   version: 1.0.0

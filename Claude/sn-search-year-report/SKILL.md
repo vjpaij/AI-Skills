@@ -1,6 +1,6 @@
 ---
 name: sn-search-year-report
-description: Used to search free, official corporate annual reports, periodic financial statements, listed company disclosure filings, bond issuer reports, and overseas company statutory annual filings.
+description: "Used to search free, official corporate annual reports, periodic financial statements, listed company disclosure filings, bond issuer reports, and overseas company statutory annual filings."
 ---
 
 # Annual Report and Periodic Disclosures Search

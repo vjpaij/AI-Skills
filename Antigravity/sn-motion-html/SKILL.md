@@ -1,6 +1,6 @@
 ---
 name: sn-motion-html
-description: Build continuous-shot motion-driven HTML stories from a subject or narrative, including research, story structure, consistent AI stills, Seedance scene and connector clips, interface styling, media normalization, and browser QA. Use for immersive journeys, timelines, product stories, fictional worlds, or other scene-based visual narratives whose camera should flow from beginning to end; not for ordinary autoplay video pages or general web apps.
+description: "Build continuous-shot motion-driven HTML stories from a subject or narrative, including research, story structure, consistent AI stills, Seedance scene and connector clips, interface styling, media normalization, and browser QA. Use for immersive journeys, timelines, product stories, fictional worlds, or other scene-based visual narratives whose camera should flow from beginning to end; not for ordinary autoplay video pages or general web apps."
 ---
 
 # SN Motion HTML

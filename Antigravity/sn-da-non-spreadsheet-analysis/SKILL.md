@@ -1,6 +1,6 @@
 ---
 name: sn-da-non-spreadsheet-analysis
-description: Document parsing and data analysis engine for Word (.docx/.doc), PDF (.pdf), and PowerPoint (.pptx/.ppt) files. Covers full text extraction, table digitization, visual chart understanding, formatting checks, and cross-document comparison.
+description: "Document parsing and data analysis engine for Word (.docx/.doc), PDF (.pdf), and PowerPoint (.pptx/.ppt) files. Covers full text extraction, table digitization, visual chart understanding, formatting checks, and cross-document comparison."
 ---
 
 # Non-Spreadsheet Document Analysis (Word / PDF / PPT)

@@ -1,6 +1,6 @@
 ---
 name: sn-md-to-html-report
-description: Restructures and designs Markdown reports, research notes, industry analyses, strategy memos, and whitepapers into publication-ready, self-contained standalone HTML thematic pages with responsive navigation, elegant typography, and evidence charts.
+description: "Restructures and designs Markdown reports, research notes, industry analyses, strategy memos, and whitepapers into publication-ready, self-contained standalone HTML thematic pages with responsive navigation, elegant typography, and evidence charts."
 ---
 
 # Markdown to Thematic HTML Report

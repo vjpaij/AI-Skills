@@ -1,6 +1,6 @@
 ---
 name: requirements-planning
-description: Turn a new application, feature, or ambiguous request into agreed requirements, acceptance criteria, priorities, dependencies, and an implementation plan. Use before substantial implementation when scope or success conditions need clarification.
+description: "Turn a new application, feature, or ambiguous request into agreed requirements, acceptance criteria, priorities, dependencies, and an implementation plan. Use before substantial implementation when scope or success conditions need clarification."
 ---
 
 # Requirements and planning

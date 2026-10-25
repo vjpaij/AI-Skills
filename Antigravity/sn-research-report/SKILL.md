@@ -1,6 +1,6 @@
 ---
 name: sn-research-report
-description: Research report structural architect. Selects and structures optimal report templates based on the reader's cognitive task (panoramic landscape, competitive comparison, empirical investigation, chronological timeline) and domain conventions (academic, medical, legal, policy).
+description: "Research report structural architect. Selects and structures optimal report templates based on the reader's cognitive task (panoramic landscape, competitive comparison, empirical investigation, chronological timeline) and domain conventions (academic, medical, legal, policy)."
 ---
 
 # Research Report Structure & Architecture

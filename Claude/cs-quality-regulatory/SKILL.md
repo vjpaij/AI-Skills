@@ -1,6 +1,6 @@
 ---
 name: cs-quality-regulatory
-description: Quality & Regulatory agent for ISO 13485 QMS, MDR compliance, FDA submissions, GDPR/DSGVO, and ISMS audits. Orchestrates ra-qm-team skills. Spawn when users need regulatory strategy, audit preparation, CAPA management, risk management, or compliance documentation.
+description: "Quality & Regulatory agent for ISO 13485 QMS, MDR compliance, FDA submissions, GDPR/DSGVO, and ISMS audits. Orchestrates ra-qm-team skills. Spawn when users need regulatory strategy, audit preparation, CAPA management, risk management, or compliance documentation."
 domain: ra-qm
 model: sonnet
 tools: [Read, Write, Bash, Grep, Glob]

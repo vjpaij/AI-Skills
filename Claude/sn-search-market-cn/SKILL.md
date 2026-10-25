@@ -1,6 +1,6 @@
 ---
 name: sn-search-market-cn
-description: Use when researching China market, industry, macro, trade, procurement, listed-company disclosure, regulation, IP, healthcare, logistics, energy, environment, or industrial-operation information using free official sources with no registration, no API key, and no cryptocurrency data.
+description: "Use when researching China market, industry, macro, trade, procurement, listed-company disclosure, regulation, IP, healthcare, logistics, energy, environment, or industrial-operation information using free official sources with no registration, no API key, and no cryptocurrency data."
 ---
 
 # China Market and Business Search

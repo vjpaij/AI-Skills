@@ -1,6 +1,6 @@
 ---
 name: sn-search-code
-description: Used to search for code examples, open-source repositories, GitHub Issues, technical Q&A, developer discussions, and HuggingFace models/datasets/Spaces.
+description: "Used to search for code examples, open-source repositories, GitHub Issues, technical Q&A, developer discussions, and HuggingFace models/datasets/Spaces."
 ---
 
 # Code and Technical Search

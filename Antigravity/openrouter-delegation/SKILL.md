@@ -1,6 +1,6 @@
 ---
 name: openrouter-delegation
-description: Automatically classifies coding tasks into tiers and delegates lightweight tasks to free OpenRouter models via MCP server, preserving premium model rate limits for heavy-lifting architectural work, research, and complex algorithms.
+description: "Automatically classifies coding tasks into tiers and delegates lightweight tasks to free OpenRouter models via MCP server, preserving premium model rate limits for heavy-lifting architectural work, research, and complex algorithms."
 ---
 
 # OpenRouter Task Delegation Skill

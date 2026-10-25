@@ -1,6 +1,6 @@
 ---
 name: production-engineering
-description: Plan or improve production-ready software across requirements, architecture, frontend, backend, testing, security, deployment, observability, and agentic workflows. Use for end-to-end application work or major cross-cutting features; delegate focused UI, browser testing, MCP, and skill-authoring tasks to the matching installed skills.
+description: "Plan or improve production-ready software across requirements, architecture, frontend, backend, testing, security, deployment, observability, and agentic workflows. Use for end-to-end application work or major cross-cutting features; delegate focused UI, browser testing, MCP, and skill-authoring tasks to the matching installed skills."
 ---
 
 # Production engineering
@@ -25,5 +25,4 @@ Use agents or automation only when a task has clear independent work units. Give
 ## Coverage catalogue
 
 See [references/catalogue.md](references/catalogue.md) for the audited skill inventory, installed official additions, current coverage gaps, source revisions, license notes, and optional official plugin candidates.
-
 

@@ -1,6 +1,6 @@
 ---
 name: cs-workspace-admin
-description: Google Workspace administration agent using the gws CLI. Orchestrates workspace setup, Gmail/Drive/Sheets/Calendar automation, security audits, and recipe execution. Spawn when users need Google Workspace automation, gws CLI help, or workspace administration.
+description: "Google Workspace administration agent using the gws CLI. Orchestrates workspace setup, Gmail/Drive/Sheets/Calendar automation, security audits, and recipe execution. Spawn when users need Google Workspace automation, gws CLI help, or workspace administration."
 domain: engineering
 model: opus
 tools: [Read, Write, Bash, Grep, Glob]

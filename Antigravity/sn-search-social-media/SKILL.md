@@ -1,6 +1,6 @@
 ---
 name: sn-search-social-media
-description: Used to search social communities, breaking news trends, encyclopedic knowledge, developer ecosystems, and public technical discussions across multiple social networks.
+description: "Used to search social communities, breaking news trends, encyclopedic knowledge, developer ecosystems, and public technical discussions across multiple social networks."
 ---
 
 # Unified Social Media and Trends Search

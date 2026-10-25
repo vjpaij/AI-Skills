@@ -1,6 +1,6 @@
 ---
 name: sn-search-image
-description: USE FOR Google-backed image discovery via Serper.dev. Returns image URLs, page URLs, titles, and source domains.
+description: "USE FOR Google-backed image discovery via Serper.dev. Returns image URLs, page URLs, titles, and source domains."
 metadata: {"openclaw":{"requires":{"bins":["python3"],"env":["SERPER_API_KEY"]},"primaryEnv":"SERPER_API_KEY"}}
 ---
 

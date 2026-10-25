@@ -1,10 +1,6 @@
 ---
 name: sn-image-resume
-description: |
-  Generates a designed portfolio-resume image from resume content provided in conversation text.
-  Extracts optional style instructions, converts the resume into a fixed portfolio-resume layout prompt,
-  and generates the final image through sn-image-base. Use when user asks to create "resume image",
-  "portfolio resume", "resume visual", "resume poster", or "personal resume visual design".
+description: "| Generates a designed portfolio-resume image from resume content provided in conversation text. Extracts optional style instructions, converts the resume into a fixed portfolio-resume layout prompt, and generates the final image through sn-image-base. Use when user asks to create \"resume image\", \"portfolio resume\", \"resume visual\", \"resume poster\", or \"personal resume visual design\"."
 metadata:
   project: SenseNova-Skills
   tier: 1

@@ -1,9 +1,6 @@
 ---
 name: sn-infographic
-description: |
-  Generates professional infographics with various layout types and visual styles.
-  Analyzes content, recommends layout and style, and generates publication-ready infographics.
-  Use when user asks to create "infographic", "infographic", "visual summary", or "visualization".
+description: "| Generates professional infographics with various layout types and visual styles. Analyzes content, recommends layout and style, and generates publication-ready infographics. Use when user asks to create \"infographic\", \"infographic\", \"visual summary\", or \"visualization\"."
 metadata:
   project: SenseNova-Skills
   tier: 1

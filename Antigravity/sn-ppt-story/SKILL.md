@@ -1,6 +1,6 @@
 ---
 name: sn-ppt-story
-description: Presentation story and outline architect. Synthesizes user queries, source documents, and research materials into a structured, editable outline.md governing page layouts, visual cues, and slide-by-slide narrative flow. Mandatory intermediate stage before deck rendering.
+description: "Presentation story and outline architect. Synthesizes user queries, source documents, and research materials into a structured, editable outline.md governing page layouts, visual cues, and slide-by-slide narrative flow. Mandatory intermediate stage before deck rendering."
 ---
 
 # Presentation Story & Outline Architect

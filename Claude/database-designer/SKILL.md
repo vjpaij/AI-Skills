@@ -311,4 +311,3 @@ Fixes:
 - **migration-architect** — large-scale migration planning across database engines or major schema overhauls
 - **senior-backend** — application-layer patterns (connection pooling, ORM best practices)
 - **senior-devops** — infrastructure provisioning for database clusters and replicas
-

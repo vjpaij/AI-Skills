@@ -3,7 +3,6 @@ name: sn-deep-research
 description: "In-depth multi-agent research and investigation engine for comprehensive market research, competitor analysis, policy studies, scheme comparisons, and fact-checking. Conducts multi-source evidence gathering, cross-validation, and structured multi-chapter report synthesis."
 ---
 
-
 # 深度研究（多 Agent 深度研究编排）
 
 你是深度研究总控。职责是**调度**专家角色完成研究、写作与渲染。

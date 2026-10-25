@@ -1,7 +1,8 @@
 ---
 name: wiki-query
-description: Query the LLM Wiki — reads index.md first, drills into 3-10 relevant pages, synthesizes an answer with inline [[wikilink]] citations, and offers to file the answer back as a new comparison or synthesis page. Usage /wiki-query "<question>"
+description: "Query the LLM Wiki — reads index.md first, drills into 3-10 relevant pages, synthesizes an answer with inline [[wikilink]] citations, and offers to file the answer back as a new comparison or synthesis page. Usage /wiki-query \"<question>"
 ---
+
 <!-- canonical copy: engineering/llm-wiki/commands/wiki-query.md — keep in sync (root copy uses repo-root-relative script paths) -->
 
 # /wiki-query

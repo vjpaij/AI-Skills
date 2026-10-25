@@ -1,12 +1,6 @@
 ---
 name: sn-update
-description: |
-  Update SenseNova Skills (the sn-* bundle) inside an OpenClaw or hermes-agent
-  install. ALWAYS use this skill when the user says any of: "update SenseNova
-  skills", "update SN skills", "update sensenova skills", "update sn skills",
-  "refresh sn-*", "upgrade sn-* skills", or names a specific sn-* skill to update
-  (e.g. "update sn-ppt-standard", "refresh sn-image-base"). Default scope is the
-  whole sn-* bundle; if the user names specific skills, update ONLY those.
+description: "| Update SenseNova Skills (the sn-* bundle) inside an OpenClaw or hermes-agent install. ALWAYS use this skill when the user says any of: \"update SenseNova skills\", \"update SN skills\", \"update sensenova skills\", \"update sn skills\", \"refresh sn-*\", \"upgrade sn-* skills\", or names a specific sn-* skill to update (e.g. \"update sn-ppt-standard\", \"refresh sn-image-base\"). Default scope is the whole sn-* bundle; if the user names specific skills, update ONLY those."
 metadata:
   project: SenseNova-Skills
   tier: 1

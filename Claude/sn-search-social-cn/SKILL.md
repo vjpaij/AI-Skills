@@ -1,6 +1,6 @@
 ---
 name: sn-search-social-cn
-description: Used to search Chinese social platforms. Script entries cover Bilibili videos, Zhihu Q&A, and Douyin videos; Xiaohongshu and Weibo currently use browser-use / public web fallbacks.
+description: "Used to search Chinese social platforms. Script entries cover Bilibili videos, Zhihu Q&A, and Douyin videos; Xiaohongshu and Weibo currently use browser-use / public web fallbacks."
 ---
 
 # sn-search-social-cn - Chinese Social Media Search
