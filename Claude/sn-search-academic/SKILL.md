@@ -1,26 +1,27 @@
 ---
 name: sn-search-academic
-description: 用于学术调研、论文精读、相关工作梳理、百科知识查询和引用链追溯。
+description: "Used for academic research, paper deep-reading, literature reviews, encyclopedic knowledge queries, and citation graph tracing."
 ---
 
-# sn-search-academic - 学术搜索
 
-## 凭证配置
+# sn-search-academic - Academic Search
 
-API key、token 与 cookie 统一建议写在仓库根目录 `.env`（参考 `.env.example`），并由 runtime 或用户在执行前加载为同名环境变量。脚本仍只从环境变量或显式 CLI 参数读取凭证；不要把真实密钥写入 skill payload、报告、日志或提交。
+## Credential Configuration
 
-使用三个统一入口完成学术调研：
+API keys, tokens, and cookies should be placed in `.env` in the repository root (see `.env.example`). The runtime or user loads them into environment variables before execution. Scripts read credentials strictly from environment variables or explicit CLI parameters; never hardcode credentials into skill payloads, reports, logs, or git commits.
 
-- `search.py`：搜索论文和百科条目
-- `paper.py`：列出论文章节，读取论文全文或指定章节
-- `refTree.py`：查询论文的 references 和 citations
+Execute academic research through three unified script entry points:
+
+- `search.py`: Searches academic papers and encyclopedic entries
+- `paper.py`: Lists paper sections and reads full text or specified sections
+- `refTree.py`: Queries paper references and incoming citation graphs
 
 不要直接调用历史 provider 脚本；它们只是统一入口的内部实现细节。
 需要 provider 回退链、参数分发或完整输出字段时，按需读取 `references/search.md`、`references/paper.md`、`references/refTree.md`。
 
-## 可用脚本
+## Available Scripts
 
-| 脚本 | 用途 | 主要输入 | 主要输出 |
+| Script | Purpose | Primary Inputs | Primary Outputs |
 |------|------|----------|----------|
 | `scripts/search.py` | 搜索论文/百科 | `query`，可选 `--source`、`--limit`、`--category`、`--lang` | 按 source 分组的论文/百科条目，位于 `source_results[*].items` |
 | `scripts/paper.py` | 列出章节，读取论文全文或章节 | 论文 ID，可选 `--source`、`--list_section`、`--section` | 章节列表位于 `sections`；全文或章节正文位于 `content` |

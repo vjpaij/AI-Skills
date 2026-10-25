@@ -6,13 +6,13 @@ description: |
   and environment variables. Prompts user to configure missing required variables and saves
   them to .env file. After configuration, reloads environment and suggests agent restart if needed.
 triggers:
-  - "SenseNova-Skills环境检查"
+  - "SenseNova-Skills Environment Check"
   - "SenseNova-Skills doctor"
-  - "sn环境检查"
+  - "sn Environment Check"
   - "sn-image-doctor"
   - "environment check"
   - "health check"
-  - "诊断环境"
+  - "Diagnose Environment"
 metadata:
   project: SenseNova-Skills
   tier: 0

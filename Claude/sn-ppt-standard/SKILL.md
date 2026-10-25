@@ -1,7 +1,8 @@
 ---
 name: sn-ppt-standard
-description: 仅在 `sn-ppt-entry` 与 `sn-ppt-story` 已准备绝对 `DECK_DIR` 和 `outline.md` 后使用；生成每页独立 HTML（1600×900）、渲染 PNG、逐页讲稿、`present.html`，并按 `static_postprocess` 选择生成由 Standard 自有 exporter 转换的 PPTX。**`present.html` 始终是必交付产物，缺失即技术故障，不得交付；`static_postprocess` 含 `pptx` 时 PPTX 同为必交付产物（缺一即技术故障），且只能由 Standard 自有 exporter 生成；仅当用户明确要求只要 HTML（`static_postprocess` 为 `[]`）时，PPTX 才可不交付。**
+description: "Used after `sn-ppt-entry` and `sn-ppt-story` have prepared absolute `DECK_DIR` and `outline.md`. Generates standalone HTML per slide (1600x900), renders PNGs, produces speaker notes, creates `present.html`, and exports native PPTX packages via the Standard exporter."
 ---
+
 
 # sn-ppt-standard
 

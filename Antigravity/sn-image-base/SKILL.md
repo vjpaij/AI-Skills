@@ -6,9 +6,9 @@ description: |
   This skill is not user-facing and is intended for upper-layer skills only.
 triggers:
   - "SenseNova-Skills Image Generation"
-  - "SenseNova-Skills 图像基础工具"
-  - "sn 图像基础工具"
-  - "SenseNova 图像基础工具"
+  - "SenseNova-Skills Core Image Tool"
+  - "sn Core Image Tool"
+  - "SenseNova Core Image Tool"
   - "SenseNova Image Generation"
   - "sn-image-base"
 metadata:

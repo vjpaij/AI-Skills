@@ -151,7 +151,7 @@ Parse the single JSON line from stdout.
 When `status == "ok"`, echo the returned `editor_url`, `public_url`, or `workbench.editorUrl` for existing-deck editing requests. The helper may also return `generation_url`; that URL is the generation progress page at `/progress`, while the editor is `/editor`.
 
 ```text
-PPT 编辑工作台已启动：<editor_url>
+PPT Editor Workbench started: <editor_url>
 ```
 
 If `workbench.reused == true`, say it reused the existing server.
@@ -221,7 +221,7 @@ Always send a short progress message before and after the helper:
 
 | When | Example |
 |---|---|
-| Before helper | `正在启动 PPT 预览工作台，不会重新生成幻灯片...` |
-| Success | `PPT 编辑工作台已启动：http://127.0.0.1:18087` |
-| Generation progress URL available | `生成进度工作台：http://127.0.0.1:18087/progress` |
-| Skip/failure | `PPT 工作台未启动：<reason>` |
+| Before helper | `Starting PPT preview workbench, will not regenerate slides...` |
+| Success | `PPT Editor Workbench started: http://127.0.0.1:18087` |
+| Generation progress URL available | `Generation progress workbench: http://127.0.0.1:18087/progress` |
+| Skip/failure | `PPT Workbench not started: <reason>` |

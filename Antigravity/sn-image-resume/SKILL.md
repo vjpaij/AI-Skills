@@ -4,7 +4,7 @@ description: |
   Generates a designed portfolio-resume image from resume content provided in conversation text.
   Extracts optional style instructions, converts the resume into a fixed portfolio-resume layout prompt,
   and generates the final image through sn-image-base. Use when user asks to create "resume image",
-  "portfolio resume", "简历图", "简历海报", or "个人简历视觉设计".
+  "portfolio resume", "resume visual", "resume poster", or "personal resume visual design".
 metadata:
   project: SenseNova-Skills
   tier: 1
@@ -17,11 +17,11 @@ triggers:
   - "visual resume"
   - "resume poster"
   - "CV image"
-  - "简历图"
-  - "简历海报"
-  - "可视化简历"
-  - "个人简历视觉设计"
-  - "作品集简历"
+  - "resume visual"
+  - "resume poster"
+  - "visual resume"
+  - "personal resume visual design"
+  - "portfolio resume"
 ---
 
 # sn-image-resume

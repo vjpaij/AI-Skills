@@ -1,90 +1,54 @@
 ---
 name: sn-search-social-en
-description: 用于搜索英文社交平台，包括 Reddit 帖子、Twitter/X 推文和 YouTube 视频。
+description: Used to search English social platforms, including Reddit discussions, Twitter/X posts, and YouTube videos.
 ---
 
-# sn-search-social-en - 英文社交平台搜索
+# sn-search-social-en - English Social Media Search
 
-## 凭证配置
+## Credential Configuration
 
-API key、token 与 cookie 统一建议写在仓库根目录 `.env`（参考 `.env.example`），并由 runtime 或用户在执行前加载为同名环境变量。脚本仍只从环境变量或显式 CLI 参数读取凭证；不要把真实密钥写入 skill payload、报告、日志或提交。
+API keys, tokens, and cookies should be placed in `.env` in the repository root (see `.env.example`). The runtime or user loads them into environment variables before execution. Scripts read credentials strictly from environment variables or explicit CLI parameters; never hardcode credentials into skill payloads, reports, logs, or git commits.
 
-搜索 Reddit、Twitter/X、YouTube 三个英文社交平台。
+Searches three major English social platforms: Reddit, Twitter/X, and YouTube.
 
-## 可用脚本
+## Available Scripts
 
-| 脚本 | 平台 | 用途 | API 密钥 |
-|------|------|------|---------|
-| `reddit_search.py` | Reddit | 帖子和讨论搜索 | 无需 |
-| `twitter_search.py` | Twitter/X | 推文搜索 | 需 `TIKHUB_TOKEN` |
-| `youtube_search.py` | YouTube | 视频搜索 | 需 `YOUTUBE_API_KEY` |
+| Script | Platform | Purpose | API Key / Token |
+|---|---|---|---|
+| `reddit_search.py` | Reddit | Posts and thread discussions | None required |
+| `twitter_search.py` | Twitter/X | Tweet search | Requires `TIKHUB_TOKEN` |
+| `youtube_search.py` | YouTube | Video tutorials and search | Requires `YOUTUBE_API_KEY` |
 
-## 依赖
-
-首次运行或脚本提示缺库时，使用本技能的依赖清单安装到当前 Python 环境：
+## Dependencies
 
 ```bash
 python3 -m pip install -r requirements.txt
 ```
 
-不要在脚本内部自动安装依赖。若安装失败、网络不可用或包不可用，停止使用对应脚本并改用网页搜索，说明缺少依赖。
-
-## 参数说明
+## CLI Reference
 
 ### reddit_search.py
-
 ```bash
-python3 scripts/reddit_search.py <query> [选项]
+python3 scripts/reddit_search.py <query> [options]
 ```
-
-| 参数 | 说明 | 默认值 |
-|------|------|--------|
-| `query` | 搜索关键词（必填） | — |
-| `--limit`, `-n` | 返回结果数量 | 10 |
-| `--subreddit`, `-r` | 限定子版块（如 `python`, `machinelearning`） | — |
-| `--sort` | 排序方式：`relevance`, `hot`, `top`, `new`, `comments` | relevance |
-| `--time`, `-t` | 时间范围：`hour`, `day`, `week`, `month`, `year`, `all` | all |
-
-```bash
-python3 scripts/reddit_search.py "machine learning projects" --limit 5
-python3 scripts/reddit_search.py "async python" --subreddit python --sort top --time month --limit 5
-```
+- `query`: Search keyword (required)
+- `--limit`, `-n`: Number of results (default: 10)
+- `--subreddit`, `-r`: Filter by subreddit (e.g. `python`, `machinelearning`)
+- `--sort`: Sorting mode: `relevance`, `hot`, `top`, `new`, `comments`
+- `--time`, `-t`: Time filter: `hour`, `day`, `week`, `month`, `year`, `all`
 
 ### twitter_search.py
-
 ```bash
-python3 scripts/twitter_search.py <query> [选项]
+python3 scripts/twitter_search.py <query> [options]
 ```
-
-| 参数 | 说明 | 默认值 |
-|------|------|--------|
-| `query` | 搜索关键词（必填） | — |
-| `--limit`, `-n` | 返回结果数量 | 10 |
-| `--token` | TikHub Token（也可通过 `TIKHUB_TOKEN` 环境变量设置，必填） | — |
-
-```bash
-python3 scripts/twitter_search.py "AI agents" --limit 10
-python3 scripts/twitter_search.py "LLM" --token your_tikhub_token --limit 5
-```
+- `query`: Search keyword (required)
+- `--limit`, `-n`: Number of results (default: 10)
+- `--token`: TikHub Token (or `TIKHUB_TOKEN` env var, required)
 
 ### youtube_search.py
-
 ```bash
-python3 scripts/youtube_search.py <query> [选项]
+python3 scripts/youtube_search.py <query> [options]
 ```
-
-| 参数 | 说明 | 默认值 |
-|------|------|--------|
-| `query` | 搜索关键词（必填） | — |
-| `--limit`, `-n` | 返回结果数量 | 10 |
-| `--api-key` | YouTube API 密钥（也可通过 `YOUTUBE_API_KEY` 环境变量设置，必填） | — |
-| `--order` | 排序方式：`relevance`, `date`, `viewCount`, `rating` | relevance |
-
-```bash
-python3 scripts/youtube_search.py "transformer explained" --limit 5
-python3 scripts/youtube_search.py "python tutorial" --order viewCount --limit 10
-```
-
-## 输出格式
-
-标准 JSON：`{"success": true, "query": "...", "provider": "reddit|twitter|youtube", "items": [...], "error": null}`
+- `query`: Search keyword (required)
+- `--limit`, `-n`: Number of results (default: 10)
+- `--api-key`: YouTube API Key (or `YOUTUBE_API_KEY` env var, required)

@@ -1,9 +1,9 @@
 ---
 name: sn-da-image-caption
-description: "图片理解与数据提取 skill。当图片文件（.png/.jpg/.jpeg/.gif/.webp/.bmp）是主要输入且用户需要理解、提取数据或分析图片内容时使用。提供预配置的 caption 脚本（scripts/caption.py），通过 vision 模型将图片转为文本描述，无需额外配置 API Key。覆盖：(1) 通过 scripts/caption.py 对图表/表格/截图/流程图进行 caption，(2) 将 caption 文本解析为结构化 DataFrame，(3) 基于提取数据重新生成可视化图表，(4) 导出为 Excel/CSV。**遇到以下任一情况就主动使用本 skill，不要自行猜测图片内容**：①用户出现触发词：图片分析 / 图表提取 / 表格识别 / OCR / 图片描述 / 截图分析 / 图表数据 / 提取图片中的数据 / 图片转表格 / 识别图片 / image caption / extract data from image / chart analysis / table OCR；②用户上传或指定了图片文件（.png / .jpg / .jpeg / .gif / .webp / .bmp）并要求理解、提取数据或分析内容；③任务需要从图表截图、表格截图、UI 截图、流程图中提取结构化信息；④用户要求将图片中的数据转为 Excel/CSV 或重新生成可视化图表。仅不用于：图片编辑（裁剪、滤镜、缩放）、图片生成、不含数据的风景/人物照片描述。"
+description: "Image understanding and data extraction skill. Use when image files (.png/.jpg/.jpeg/.gif/.webp/.bmp) are primary inputs and structured data or visual analysis is needed. Uses preconfigured vision scripts (scripts/caption.py) to convert charts, tables, screenshots, and diagrams into structured DataFrames and regenerate charts or export to Excel/CSV."
 ---
 
-# Image Caption Analysis — 图片描述与数据提取
+# Image Caption Analysis — Image Understanding & Data Extraction
 
 ## Overview
 
@@ -60,7 +60,7 @@ python3 scripts/caption.py /mnt/data/image.png --model gemini-3.1-flash-lite-pre
 {
   "file": "/mnt/data/image.png",
   "type": "chart",
-  "description": "这是一张柱状图...",
+  "description": "This is a bar chart showing...",
   "usage": {"prompt_tokens": 1100, "completion_tokens": 400},
   "cached": false
 }
@@ -76,7 +76,7 @@ CAPTION = "/path/to/skills/sn-da-image-caption/scripts/caption.py"
 # Single image
 result = subprocess.run(
     ["python3", CAPTION, "/mnt/data/chart.png", "--json",
-     "--prompt", "提取图表数据，Markdown 表格输出"],
+     "--prompt", "Extract chart data, output as Markdown table"],
     capture_output=True, text=True, timeout=60
 )
 data = json.loads(result.stdout)
@@ -98,15 +98,15 @@ Different image types need different prompts. The script auto-detects, but speci
 
 | Image Type | When | Recommended --prompt |
 |-----------|------|---------------------|
-| Data chart | 柱状图/折线图/饼图 | `"提取图表标题、坐标轴、每个数据点数值、图例。Markdown 表格输出。"` |
-| Table screenshot | 表格截图 | `"提取表格所有内容，Markdown 表格格式，保持行列结构，数值不四舍五入。"` |
-| UI screenshot | 界面截图 | `"以前端开发者视角描述：布局、组件、文字、颜色。"` |
-| Diagram | 流程图/架构图 | `"描述所有节点、连接关系（A→B）、分支条件。"` |
-| General | 照片、其他 | 不传 --prompt，用默认 |
+| Data chart | Bar chart / Line chart / Pie chart | `"提取图表标题、坐标轴、每个数据点数值、图例。Markdown 表格输出。"` |
+| Table screenshot | Table screenshot | `"提取表格所有内容，Markdown 表格格式，保持行列结构，数值不四舍五入。"` |
+| UI screenshot | UI screenshot | `"以前端开发者视角描述：布局、组件、文字、颜色。"` |
+| Diagram | Flowchart / Architecture diagram | `"描述所有节点、连接关系（A→B）、分支条件。"` |
+| General | Photos, other imagery | Omit --prompt to use default |
 
 ## Parsing Caption Results
 
-Caption 通常返回 Markdown 表格，解析为 DataFrame：
+Caption 通常返回 Markdown 表格，Parse into DataFrame：
 
 ```python
 import pandas as pd
@@ -177,7 +177,7 @@ COLORS = ['#4C72B0', '#55A868', '#C44E52', '#8172B2', '#CCB974', '#64B5CD']
 ```python
 plt.savefig('/mnt/data/chart.png', dpi=150, bbox_inches='tight')
 plt.show()
-print("![图表](sandbox:/mnt/data/chart.png)")
+print("![Chart](sandbox:/mnt/data/chart.png)")
 ```
 
 ## Export to Excel
@@ -187,8 +187,8 @@ from openpyxl.styles import Font, PatternFill, Alignment
 
 output_path = "/mnt/data/result.xlsx"
 with pd.ExcelWriter(output_path, engine='openpyxl') as writer:
-    df.to_excel(writer, index=False, sheet_name='提取数据')
-    ws = writer.sheets['提取数据']
+    df.to_excel(writer, index=False, sheet_name='Extracted Data')
+    ws = writer.sheets['Extracted Data']
     fill = PatternFill(start_color='4472C4', end_color='4472C4', fill_type='solid')
     for cell in ws[1]:
         cell.font = Font(bold=True, color='FFFFFF')
@@ -198,7 +198,7 @@ with pd.ExcelWriter(output_path, engine='openpyxl') as writer:
         w = max(df[col].astype(str).str.len().max(), len(str(col))) + 2
         ws.column_dimensions[chr(64 + i)].width = min(w * 1.2, 40)
 
-print(f"[下载](sandbox:{output_path})")
+print(f"[Download](sandbox:{output_path})")
 ```
 
 ## Multi-Image Processing
@@ -211,7 +211,7 @@ all_dfs = []
 
 for img in image_files:
     r = subprocess.run(
-        ["python3", CAPTION, img, "--json", "--prompt", "提取数据，Markdown 表格"],
+        ["python3", CAPTION, img, "--json", "--prompt", "Extracted Data，Markdown 表格"],
         capture_output=True, text=True, timeout=60
     )
     desc = json.loads(r.stdout)["description"]

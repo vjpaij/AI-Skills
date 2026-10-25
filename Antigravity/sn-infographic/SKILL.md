@@ -3,7 +3,7 @@ name: sn-infographic
 description: |
   Generates professional infographics with various layout types and visual styles.
   Analyzes content, recommends layout and style, and generates publication-ready infographics.
-  Use when user asks to create "infographic", "信息图", "visual summary", or "可视化".
+  Use when user asks to create "infographic", "infographic", "visual summary", or "visualization".
 metadata:
   project: SenseNova-Skills
   tier: 1
@@ -18,13 +18,13 @@ triggers:
   - "data visualization"
   - "visual explanation"
   - "diagram"
-  - "生成信息图"
-  - "信息图生成"
-  - "生成 infographic"
-  - "信息图表"
-  - "图表生成"
-  - "数据可视化"
-  - "图解"
+  - "generate infographic"
+  - "infographic generation"
+  - "generate infographic"
+  - "infographic table"
+  - "chart generation"
+  - "data visualization"
+  - "diagram illustration"
 ---
 
 # sn-infographic
@@ -49,14 +49,14 @@ Features:
 | `prompts_expand_mode` | string | `auto` | `auto`: evaluate `user_prompt` quality first; enter Step 2 expansion only when it falls short |
 |                       |        |          | `force`: skip evaluation, always execute Step 2 expansion |
 |                       |        |          | `disable`: skip Step 2, use `user_prompt` directly as `expanded_prompt` |
-| `aspect_ratio` | string | *inferred* (`16:9`) | Set by **Main Agent** when the user states an explicit supported ratio (e.g. `16:9` / `9:16`, optionally via `宽高比` / `画面比例` / `aspect ratio`); otherwise left unset and the **Worker** infers it in Step 0 from `user_prompt` (orientation / scene cues) per `references/runtime-parameters.md`. |
+| `aspect_ratio` | string | *inferred* (`16:9`) | Set by **Main Agent** when the user states an explicit supported ratio (e.g. `16:9` / `9:16`, optionally via `aspect ratio` / `screen ratio` / `aspect ratio`); otherwise left unset and the **Worker** infers it in Step 0 from `user_prompt` (orientation / scene cues) per `references/runtime-parameters.md`. |
 | `image_size` | string | *inferred* (`2k`) | Set by **Main Agent** when the user states an explicit size (`2k` / `4k`); otherwise the **Worker** infers it in Step 0 (currently a single option, `2k`). `4k` is supported when `SN_IMAGE_GEN_MODEL=sensenova-u1.5-lite`; other models may reject it and the skill surfaces that error. |
 
 > **Who extracts what:** Main Agent parameter extraction resolves `max_rounds`, `output_mode`, `prompts_expand_mode`, and `aspect_ratio` / `image_size` (each only when the user gives an explicit value). `aspect_ratio` and `image_size` without an explicit value are inferred by the Worker in Step 0.
 
 ## API Configuration
 
-All API calls in this skill are executed through the `sn_agent_runner.py` of the `sn-image-base` skill, with authentication parameters using default values (CLI > environment variables > built-in defaults),无需显式传入。
+All API calls in this skill are executed through the `sn_agent_runner.py` of the `sn-image-base` skill, with authentication parameters using default values (CLI > environment variables > built-in defaults),no explicit input required.
 
 | Call Type | Tool | Authentication Parameters | Description |
 |-----------|------|---------------------------|-------------|
@@ -90,18 +90,18 @@ This skill uses a two-tier agent architecture:
 ### Main Agent Workflow
 
 1. **Parameter extraction** from the user request, in three passes:
-   1. **Inline KV directives** — parse tokens of the form `key=value` where `key` ∈ {`max_rounds`, `output_mode`, `prompts_expand_mode`, `aspect_ratio`, `image_size`}; strip recognized tokens from the user message, and the remainder becomes `user_prompt`. Example: `"生成一张信息图 max_rounds=3 output_mode=verbose"` → `user_prompt="生成一张信息图"`, `max_rounds=3`, `output_mode=verbose`.
+   1. **Inline KV directives** — parse tokens of the form `key=value` where `key` ∈ {`max_rounds`, `output_mode`, `prompts_expand_mode`, `aspect_ratio`, `image_size`}; strip recognized tokens from the user message, and the remainder becomes `user_prompt`. Example: `"generate an infographic max_rounds=3 output_mode=verbose"` → `user_prompt="generate an infographic"`, `max_rounds=3`, `output_mode=verbose`.
    2. **Keyword recognition** (case-insensitive, applied to the stripped text) — fill any parameter not yet set by inline KV using the table below:
 
       | Parameter | Trigger keywords | Resolved value |
       |-----------|------------------|----------------|
-      | `output_mode` | `verbose`, `详细`, `详尽`, `完整统计` | `verbose` |
-      |               | `friendly`, `简洁`, `精简` | `friendly` |
-      | `max_rounds` | `N 轮`, `N rounds`, `重试 N 次` (parse `N`) | `N`, clamped to `[1, 8]` |
-      | `prompts_expand_mode` | `强制扩写`, `force expand`, `force expansion` | `force` |
-      |                       | `不扩写`, `跳过扩写`, `disable expansion`, `no expand` | `disable` |
-      | `aspect_ratio` | an explicit supported ratio (`16:9` `9:16` `4:3` `3:4` `1:1` `2:3` `3:2` `4:5` `5:4` `21:9` `9:21`), with or without a `宽高比` / `画面比例` / `比例` / `aspect ratio` lead-in | that ratio (validated against the supported set in `runtime-parameters.md`; unsupported value → leave unset for Worker inference) |
-      | `image_size` | an explicit supported size (`2k` `4k`), with or without an `image_size` / `分辨率` / `清晰度` / `image size` lead-in | that size (vague quality words like `高清` / `超清` do **not** count); unsupported value → leave unset for Worker inference |
+      | `output_mode` | `verbose`, `detailed`, `comprehensive`, `full statistics` | `verbose` |
+      |               | `friendly`, `concise`, `simplified` | `friendly` |
+      | `max_rounds` | `N rounds`, `N rounds`, `retry N times` (parse `N`) | `N`, clamped to `[1, 8]` |
+      | `prompts_expand_mode` | `force expansion`, `force expand`, `force expansion` | `force` |
+      |                       | `no expansion`, `skip expansion`, `disable expansion`, `no expand` | `disable` |
+      | `aspect_ratio` | an explicit supported ratio (`16:9` `9:16` `4:3` `3:4` `1:1` `2:3` `3:2` `4:5` `5:4` `21:9` `9:21`), with or without a `aspect ratio` / `screen ratio` / `ratio` / `aspect ratio` lead-in | that ratio (validated against the supported set in `runtime-parameters.md`; unsupported value → leave unset for Worker inference) |
+      | `image_size` | an explicit supported size (`2k` `4k`), with or without an `image_size` / `resolution` / `clarity` / `image size` lead-in | that size (vague quality words like `HD` / `Ultra HD` do **not** count); unsupported value → leave unset for Worker inference |
 
    3. **Defaults** — any parameter still unset falls back to `max_rounds=1`, `output_mode=friendly`, `prompts_expand_mode=auto`. `aspect_ratio` and `image_size` have **no** Main-Agent default: when no explicit value is detected they are left unset for the Worker to infer in Step 0.
 
@@ -491,7 +491,7 @@ After Worker Agent completes, its last message must be and only be the following
 
 ### friendly mode (default)
 
-**Text Summary** — a one-sentence description generated by Main Agent. Length: **≤ 50 chars/字** regardless of language (1 Chinese character = 1 unit, 1 ASCII character = 1 unit). Language: follow the dominant language of `user_prompt` (predominantly Chinese → output Chinese; otherwise → output English).
+**Text Summary** — a one-sentence description generated by Main Agent. Length: **≤ 50 chars** regardless of language (1 Chinese character = 1 unit, 1 ASCII character = 1 unit). Language: follow the dominant language of `user_prompt` (predominantly Chinese → output Chinese; otherwise → output English).
 
 - **when `max_rounds = 1`**: derive the description from `expanded_prompt` (focus on what the infographic depicts).
 - **when `max_rounds > 1`**: derive the description from the rank=1 round's `result` and `violations`:

@@ -3,7 +3,7 @@ name: sn-image-imitate
 description: |
   Generates a new image that imitates the style of a reference image while updating content based on user intent.
   Uses a three-stage pipeline: image annotation (long caption), caption rewriting, and image generation.
-  Use when user asks to "imitate style", "保持这个风格重画", "按这张图风格生成", or "style transfer with new content".
+  Use when user asks to "imitate style", "preserve this style and redraw", "generate following this image style", or "style transfer with new content".
 metadata:
   project: SenseNova-Skills
   tier: 1
@@ -16,10 +16,10 @@ triggers:
   - "imitate this image style"
   - "use this style with new content"
   - "reference style image"
-  - "风格模仿"
-  - "风格迁移"
-  - "模仿这张图风格"
-  - "按参考图风格生成"
+  - "style imitation"
+  - "style transfer"
+  - "imitate this image style"
+  - "generate following reference style"
 ---
 
 # sn-image-imitate

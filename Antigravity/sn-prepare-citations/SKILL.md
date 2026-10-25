@@ -1,13 +1,13 @@
 ---
 name: sn-prepare-citations
-description: 用于终稿完成且脚注需要后处理时：去重 [^key] 引用，转换为 [N] 编号，并追加参考文献。
+description: Used when the final draft is complete and footnotes require post-processing: deduplicates [^key] references, converts them to [N] numbered citations, inserts L0/TOC, and appends the bibliography.
 ---
 
-# sn-prepare-citations（引用渲染）
+# sn-prepare-citations (Citation Rendering)
 
-处理 sn-deep-research 的 `stitched.md`：从 evidence.json 收集 `sources[]`，将正文中的 `[^source_id]` 转换为 `[N]` 编号引用，插入 L0/TOC，并追加参考文献。
+Processes `stitched.md` produced by `sn-deep-research`: collects `sources[]` from `evidence.json`, transforms `[^source_id]` in the main text into `[N]` numbered citations, inserts the L0 summary layer and Table of Contents (TOC), and appends the final bibliography.
 
-## 推荐用法（sn-deep-research v2）
+## Recommended Usage (sn-deep-research v2)
 
 ```bash
 python3 scripts/prepare_citations.py \
@@ -17,35 +17,31 @@ python3 scripts/prepare_citations.py \
   --output <report_dir>/report.md
 ```
 
-## 参数
+## Parameters
 
-| 参数 | 说明 |
+| Parameter | Description |
 |---|---|
-| `--report` | 输入 markdown。sn-deep-research 中通常是 `stitched.md` |
-| `--evidence` | 全部 `d*.evidence.json`，用于收集 source 元数据和修复 claim-id 泄漏 |
-| `--outline` | 可选但推荐。提供 L0、TOC 和标题结构信息 |
-| `--output` | 输出 markdown。sn-deep-research 中通常是 `report.md` |
-| `--no-l0` | 关闭 L0 摘要层渲染 |
-| `--no-toc` | 关闭 TOC 渲染 |
+| `--report` | Input markdown file. Usually `stitched.md` in sn-deep-research |
+| `--evidence` | All `d*.evidence.json` files, used to collect source metadata and resolve claim-id leakage |
+| `--outline` | Optional but recommended. Supplies L0, TOC, and header hierarchy metadata |
+| `--output` | Output markdown file. Usually `report.md` in sn-deep-research |
+| `--no-l0` | Disables L0 summary layer rendering |
+| `--no-toc` | Disables Table of Contents (TOC) rendering |
 
-## 处理逻辑
+## Processing Pipeline
 
-1. 从所有 evidence.json 的 `sources[]` 收集引用元数据。
-2. 按 URL 归一化去重，同 URL source 合并为同一编号。
-3. 检测 `[^dN.cM]` claim-id 引用泄漏；能映射到 claim evidence 时替换为对应 `source_id`，不能映射则报告 unresolved。
-4. 扫描正文中的 `[^source_id]`，按首次出现顺序分配编号。
-5. 替换 `[^source_id]` → `[N]`，移除脚注定义行。
-6. 根据 outline 插入或校准 L0 / TOC。
-7. 追加 `## 参考文献`。
-8. 写出 `report.md` 和同目录 `citations.json`。
-9. stdout 输出结构化 JSON，包含 orphan citations、claim-id leakage、TOC 和 L0 状态。
+1. Collects citation metadata from the `sources[]` arrays across all `evidence.json` files.
+2. Normalizes and deduplicates URLs, consolidating sources sharing the same URL into a single citation number.
+3. Detects `[^dN.cM]` claim-id leakage; replaces them with the corresponding `source_id` when mapped, or reports unresolved warnings if unmapped.
+4. Scans for `[^source_id]` occurrences in the body, assigning numbers based on first appearance.
+5. Replaces `[^source_id]` with `[N]` and removes raw footnote definition lines.
+6. Inserts or aligns the L0 executive summary and TOC according to the outline.
+7. Appends the formatted `## References` section.
+8. Writes `report.md` and `citations.json` to the target directory.
+9. Outputs structured JSON to stdout containing orphan citations, claim-id leakage, TOC, and L0 status.
 
-## 控制器处理要求
+## Controller Requirements
 
-- `orphan_citations` 非空：不要交付，回 writer/stitcher 修正引用或删除 unsupported 内容。
-- `claim_id_leakage.unresolved` 非空：不要交付，回 writer 修正 `[^dN.cM]`。
-- `claim_id_leakage.resolved` 非空但 unresolved 为空：可以继续，但记录为警告；writer 后续应直接输出 `[^source_id]`。
-
-## 旧兼容模式
-
-不传 `--outline` / `--output` 时，脚本会覆写 `--report` 指向的文件，仅做引用编号和参考文献追加。sn-deep-research 正常流程不使用该模式。
+- If `orphan_citations` is non-empty: Do not deliver. Return to writer/stitcher to fix citations or remove unsupported claims.
+- If `claim_id_leakage.unresolved` is non-empty: Do not deliver. Return to writer to fix `[^dN.cM]`.
+- If `claim_id_leakage.resolved` is non-empty but unresolved is empty: Proceed with warning; ensure future writer outputs emit `[^source_id]`.

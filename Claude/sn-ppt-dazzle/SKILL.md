@@ -1,6 +1,6 @@
 ---
 name: sn-ppt-dazzle
-description: 需要把演示 / 幻灯片 / PPT / slides 做成单文件 HTML 动态 deck（动效、跨页过渡、键盘翻页、1280×720）时使用。本 skill 非入口：使用前必须先确认 sn-ppt-entry 与 sn-ppt-story 两个前置 skill 可用，依次执行 entry（建 DECK_DIR / task_pack.json）→ story（生成 outline.md）完成后才可开始；前置缺失或未完成时停止并回报，严禁绕过（如改用生图+手写 HTML 等方式）。
+description: "Used to create animated single-file HTML presentations (1280x720) with slide transitions, keyboard navigation, and dynamic components. Pre-requisites `sn-ppt-entry` and `sn-ppt-story` must be executed first to generate DECK_DIR and outline.md."
 metadata:
   project: SenseNova-Skills
   tier: 1
@@ -13,6 +13,7 @@ triggers:
   - "炫彩 deck"
   - "dazzle"
 ---
+
 
 # sn-ppt-dazzle：单 HTML 炫彩演示 deck
 

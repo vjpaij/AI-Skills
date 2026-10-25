@@ -1,31 +1,31 @@
 ---
 name: sn-report-format-discovery
-description: 用于用户希望推荐研究成品形式，或最终形式无法从需求中直接判断时。把需求解析为一个简短的 format 字符串，不创建格式文件或 schema。
+description: Used when the user wants a recommendation for the final research deliverable format, or when the final format cannot be directly inferred from requirements. Resolves the requirement into a concise format string without creating schema or proposal files.
 ---
 
-# 最终形式推荐
+# Final Deliverable Format Recommendation
 
-根据用户需求确定一个请求级 `format` 字符串。该字符串和 `language` 一样只在本次运行上下文中传递，不写入文件。
+Determines a request-level `format` string based on user requirements. Like `language`, this string is passed only within the execution context of the current run and is never written to disk.
 
-## 输入
+## Inputs
 
-- 原始研究需求 `query`
-- 请求级 `language`
-- 用户明确提出的最终形式（如有）
+- Original research query `query`
+- Request-level `language`
+- Explicit final format specified by the user (if any)
 
-## 规则
+## Rules
 
-1. 用户明确指定最终形式时，优先使用用户的名称。
-2. 用户未指定时，根据主要阅读任务选择一个简短名称；无法判断时使用 `report`。
-3. 常见值包括 `report`、`paper`、`table`、`memo`、`timeline`、`faq`，但这不是封闭枚举。
-4. `format` 只表示最终交付形式，不承载章节、摘要、目录、结构偏好或写作规则；这些要求继续保留在原始 query 中。
-5. 不搜索外部格式规范，不生成候选对象，不创建 `format_proposal.json`、`format.json` 或任何格式 schema。
-6. 不替用户修改研究问题、范围、语言或流程模式。
+1. When the user explicitly specifies a deliverable format, prioritize the user's name.
+2. When unspecified, select a concise name based on the primary reading task; if uncertain, default to `report`.
+3. Common values include `report`, `paper`, `table`, `memo`, `timeline`, `faq`, but this is not a closed enumeration.
+4. `format` denotes only the delivery medium and structure type. It does not carry chapter breakdowns, abstracts, tables of contents, structural preferences, or style guidelines; those remain in the original query.
+5. Do not query external format specifications, generate candidate objects, or produce `format_proposal.json`, `format.json`, or any schema definition.
+6. Do not modify the user's research question, scope, language, or workflow mode.
 
-## 输出
+## Output
 
-只返回一行：
+Return exactly one line:
 
 ```text
-format: <一个简短的非空字符串>
+format: <a concise, non-empty string>
 ```

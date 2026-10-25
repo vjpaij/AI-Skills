@@ -3,9 +3,9 @@ name: sn-update
 description: |
   Update SenseNova Skills (the sn-* bundle) inside an OpenClaw or hermes-agent
   install. ALWAYS use this skill when the user says any of: "update SenseNova
-  skills", "update SN skills", "更新 sensenova skills", "更新 sn skills",
-  "刷新 sn-*", "升级 sn-* skills", or names a specific sn-* skill to update
-  (e.g. "更新 sn-ppt-standard", "refresh sn-image-base"). Default scope is the
+  skills", "update SN skills", "update sensenova skills", "update sn skills",
+  "refresh sn-*", "upgrade sn-* skills", or names a specific sn-* skill to update
+  (e.g. "update sn-ppt-standard", "refresh sn-image-base"). Default scope is the
   whole sn-* bundle; if the user names specific skills, update ONLY those.
 metadata:
   project: SenseNova-Skills
@@ -14,14 +14,14 @@ metadata:
   user_visible: true
 triggers:
   - "sn-update"
-  - "更新 sn"
-  - "更新 sensenova"
+  - "update sn"
+  - "update sensenova"
   - "update sn skills"
   - "update SN skills"
-  - "更新 sn skills"
-  - "刷新 sn-*"
-  - "刷新 sn skills"
-  - "更新 sn-ppt-standard"
+  - "update sn skills"
+  - "refresh sn-*"
+  - "refresh sn skills"
+  - "update sn-ppt-standard"
   - "refresh sn-image-base"
   - "update sensenova skills"
 ---
@@ -38,7 +38,7 @@ Refresh installed `sn-*` skills from upstream
 - No list given → every `sn-*` skill upstream.
 - Specific skills named → only those. Don't expand.
 - A named skill missing upstream → surface as error and stop.
-- User said "force / 强制" → re-install even when up-to-date.
+- User said "force / force" → re-install even when up-to-date.
 
 ---
 
